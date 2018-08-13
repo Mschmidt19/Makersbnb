@@ -1,4 +1,4 @@
-# Makers bnb 
+# Makers bnb
 
 Makers bnb allows users to list properties and book properties that are listed
 
@@ -25,6 +25,10 @@ Once logged in a user can...
   * Get confirmation of a booking
 
 ## User Stories
+
+As a property owner
+So that I can allow others to book my property
+I would like to list my property on makers bnb
 
 ## Charter
 
