@@ -1,4 +1,4 @@
-function Song() {;
+function Song() {
 }
 
 Song.prototype.persistFavoriteStatus = function(value) {
