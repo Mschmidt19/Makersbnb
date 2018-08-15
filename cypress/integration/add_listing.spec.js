@@ -7,7 +7,7 @@ describe("add a listing", function(){
       .type('0000')
       .get('#propertyDescription')
       .type("This property is the bee's knees")
-      cy.get('#addPropertyButton')
+    cy.get('#addPropertyButton')
       .click()
     cy.contains('Chimichanga man')
     cy.contains("This property is the bee's knees")
