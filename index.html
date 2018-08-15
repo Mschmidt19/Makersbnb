@@ -10,31 +10,34 @@
     <h2>Discover entire homes and private rooms perfect for any trip.</h2>
     <h3>List your property:</h3>
     <form>
-      <label for="title">
+      <label for="propertyTitle">
         Title:
-        <input type="text" name="title">
+        <input type="text" id="propertyTitle">
       </label>
     <br>
-      <label for="number">
+      <label for="propertyDescription">
         Phone number:
-        <input type="text" name="number">
+        <input type="text" id="propertyPhoneNumber">
       </label>
     <br>
-      <label for="details">
-        Description:
-        <textarea type="text" name="details"></textarea>
+      <label for="propertyDescription">
+        <div class="topalign">Description:</div>
+        <textarea type="text" id="propertyDescription"></textarea>
       </label>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" id="addPropertyButton">
     </form>
     </br>
     <h2>Listings:</h2>
-    <div class="listing">
-      <div class="innertext" style="background-color: pink">
-        Marek's Place
-        +(42) 06969696969
-      </div>
-      <div class="innerimage">
-        <img class="image" src='https://metrouk2.files.wordpress.com/2016/07/ad_212386187.jpg?quality=80&strip=all&strip=all'>
+    <div id="propertyContainer">
+      <div class="listing">
+        <div class="innertext">
+          Marek's Place
+          <br>
+          Contact number: +(42) 06969696969
+        </div>
+        <div class="innerimage">
+          <img class="image" src='https://metrouk2.files.wordpress.com/2016/07/ad_212386187.jpg?quality=80&strip=all&strip=all'>
+        </div>
       </div>
     </div>
 
