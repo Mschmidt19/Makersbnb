@@ -11,7 +11,7 @@ function addProperty() {
   var phoneNumber = document.getElementById("propertyPhoneNumber").value;
   var description = document.getElementById("propertyDescription").value;
 
-  // Add a new document in collection "cities"
+
   db.collection("Listings").doc().set({
       title: titleText,
       phone_number: phoneNumber,
@@ -26,7 +26,7 @@ function addProperty() {
 
 }
 
-var propertContainer = document.getElementById("propertyContainer");
+var propertyContainer = document.getElementById("propertyContainer");
 
 db.collection("Listings").onSnapshot(function(querySnapshot) {
 
@@ -34,7 +34,7 @@ db.collection("Listings").onSnapshot(function(querySnapshot) {
 
       if(change.type === "added") {
 
-        list_div.innerHTML += "<div class='list-item'><h3>" + change.doc.data().title + "</h3><p>Phone Number: " + change.doc.data().phone_number + "</p></div>"
+        propertyContainer.innerHTML += "<div class='listing'><div class='innertext'>" + change.doc.data().title + "<br>Contact number: " + change.doc.data().phone_number + "<br>" + change.doc.data().description + "</div><div class='innerimage'><img class='image' src='https://metrouk2.files.wordpress.com/2016/07/ad_212386187.jpg?quality=80&strip=all&strip=all'></div></div>"
 
       }
 

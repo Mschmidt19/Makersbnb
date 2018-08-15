@@ -9,27 +9,20 @@
     <h1>Makers BnB</h1>
     <h2>Discover entire homes and private rooms perfect for any trip.</h2>
     <h3>List your property:</h3>
-    <form>
-      <label for="propertyTitle">
-        Title:
-        <input type="text" id="propertyTitle">
-      </label>
+    <label for="propertyTitle">Title:</label>
+    <input id="propertyTitle">
     <br>
-      <label for="propertyDescription">
-        Phone number:
-        <input type="text" id="propertyPhoneNumber">
-      </label>
+    <label for="propertyDescription">Phone number:</label>
+    <input id="propertyPhoneNumber">
     <br>
-      <label for="propertyDescription">
-        <div class="topalign">Description:</div>
-        <textarea type="text" id="propertyDescription"></textarea>
-      </label>
-        <input type="submit" value="Submit" id="addPropertyButton">
-    </form>
-    </br>
+    <label for="propertyDescription">Description:</label>
+    <textarea id="propertyDescription"></textarea>
+    <br>
+    <button id="addPropertyButton" onclick="addProperty()">Submit</button>
+    <br>
     <h2>Listings:</h2>
     <div id="propertyContainer">
-      <div class="listing">
+      <!-- <div class="listing">
         <div class="innertext">
           Marek's Place
           <br>
@@ -38,7 +31,7 @@
         <div class="innerimage">
           <img class="image" src='https://metrouk2.files.wordpress.com/2016/07/ad_212386187.jpg?quality=80&strip=all&strip=all'>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
