@@ -58,22 +58,22 @@ I would like to list my property on makers bnb
 ## Goals and Progress
 
 # Monday
-Goal: Create sign up page and connect a database, adding text based listings to.
-Achieved:
+Goal: Create sign up page and connect a database, adding text based listings to.  
+Achieved:  
 
 # Tuesday
-Goal 1: Decide on what database and webdriver we will use.
-Goal 2: Be able to collaborate on GitHub on one repo.
-Goal 3: Create a database that is available on all devices.
-Goal 4: Work on MVP
-Stretch Goal: Have a completed MVP
+Goal 1: Decide on what database and webdriver we will use.  
+Goal 2: Be able to collaborate on GitHub on one repo.  
+Goal 3: Create a database that is available on all devices.  
+Goal 4: Work on MVP  
+Stretch Goal: Have a completed MVP  
 
-Achieved: Goal 1-4.
+Achieved: Goal 1-4.  
 
 # Wednesday
-Goal 1: Compile separate components of the code so we have a GitHub with a running MVP.
-Goal 2: Add description, location, price per night, and image to listing profile.
-Goal 3: Be able to book a listing and delete the listing from the database.
-Sretch Goal: User management - sign up, sign in, sign up.
+Goal 1: Compile separate components of the code so we have a GitHub with a running MVP.  
+Goal 2: Add description, location, price per night, and image to listing profile.  
+Goal 3: Be able to book a listing and delete the listing from the database.  
+Sretch Goal: User management - sign up, sign in, sign up.  
 
-Achieved: Goal 1-3
+Achieved: Goal 1-3.  
