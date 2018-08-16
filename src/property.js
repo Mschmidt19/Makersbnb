@@ -17,8 +17,7 @@ db.collection("Listings").onSnapshot(function(querySnapshot) {
 
       }
       else if (change.type === "removed") { // doesn't work yet
-        itemToRemove = document.getElementsByClassName(change.doc.id);
-        console.log(itemToRemove);
+        var itemToRemove = document.getElementsByClassName(change.doc.id)[0];
         propertyContainer.removeChild(itemToRemove);
       }
 
@@ -40,7 +39,7 @@ function addProperty() {
       description: description
   })
   .then(function() {
-      console.log("Listing successfully written!");
+      console.log("Listing successfully added!");
   })
   .catch(function(error) {
       console.error("Error adding listing: ", error);
@@ -51,9 +50,8 @@ function addProperty() {
 function bookProperty(button_id) {
 
   db.collection("Listings").doc(button_id).delete().then(function() {
-    console.log("You successfully booked " + db.collection("Listings").doc(button_id).data().title + "!");
+    console.log("You successfully booked a listing!");
     // location.reload();
-    
 
   }).catch(function(error) {
     console.error("Error removing document: ", error);
