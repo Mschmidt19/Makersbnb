@@ -9,6 +9,8 @@ var db = firebase.firestore();
 
 var propertyContainer = document.getElementById("propertyContainer");
 
+var titleBeingBooked;
+
 db.collection("Listings").onSnapshot(function(querySnapshot) {
 
     querySnapshot.docChanges().forEach(function(change) {
@@ -29,6 +31,7 @@ function addNewListingDiv(change) {
 }
 
 function removeListingDiv(change) {
+  titleBeingBooked = change.doc.data().title;
   var itemToRemove = document.getElementsByClassName(change.doc.id)[0];
   propertyContainer.removeChild(itemToRemove);
 }
@@ -57,10 +60,10 @@ function addProperty() {
 
 }
 
-function bookProperty(button_id) {
+function bookProperty(button_id, deletedItemTitle) {
 
   db.collection("Listings").doc(button_id).delete().then(function() {
-    window.alert("You successfully booked " + change.doc.data().title + "!")
+    window.alert("You successfully booked " + titleBeingBooked + "!")
     console.log("You successfully booked a listing!");
 
   }).catch(function(error) {
