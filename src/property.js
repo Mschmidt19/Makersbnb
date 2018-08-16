@@ -23,7 +23,7 @@ db.collection("Listings").onSnapshot(function(querySnapshot) {
 });
 
 function addNewListingDiv(change) {
-  propertyContainer.innerHTML += "<div class='" + change.doc.id + " listing'><div class='innertext'>" + change.doc.data().title + "<br>Contact number: " + change.doc.data().phone_number + "<br>" + change.doc.data().description + "<br><button onClick='bookProperty(this.id)' id='" + change.doc.id + "'>Book</button></div><div class='innerimage'><img class='image' src='" + change.doc.data().image + "'></div></div>"
+  propertyContainer.innerHTML += "<div class='" + change.doc.id + " listing'><div class='innertext'><div class='bold'>" + change.doc.data().title + "</div><br>Price per night: £" + change.doc.data().price + "<br>Contact number: " + change.doc.data().phone_number + "<br><div class='oblique'>" + change.doc.data().description + "</div><br><button onClick='bookProperty(this.id)' id='" + change.doc.id + "'>Book</button></div><div class='innerimage'><img class='image' src='" + change.doc.data().image + "'></div></div>"
 }
 
 function removeListingDiv(change) {
@@ -35,12 +35,14 @@ function removeListingDiv(change) {
 function addProperty() {
 
   var titleText = document.getElementById("propertyTitle").value;
+  var pricePerNight = document.getElementById("propertyPricePerNight").value;
   var phoneNumber = document.getElementById("propertyPhoneNumber").value;
   var description = document.getElementById("propertyDescription").value;
   var image = document.getElementById("propertyImage").value;
 
   db.collection("Listings").doc().set({
       title: titleText,
+      price: pricePerNight,
       phone_number: phoneNumber,
       image: image,
       description: description
