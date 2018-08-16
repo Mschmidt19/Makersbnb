@@ -2,52 +2,62 @@ const firestore = firebase.firestore();
 const settings = {/*your settings...*/ timestampsInSnapshots: true};
 firestore.settings(settings);
 
-// Initialize Cloud Firestore through Firebase
-var db = firebase.firestore();
+var property = new Property();
 
-var propertyContainer = document.getElementById("propertyContainer");
+function Property (database = firestore) {
+  this.database = database
+}
 
+var propertyContainer = document.getElementById('propertyContainer');
+var propertyTitle;
+var propertyPrice;
+var propertyPhoneNumber;
+var propertyDescription;
+var propertyImage;
 var titleBeingBooked;
 
-db.collection("Listings").onSnapshot(function(querySnapshot) {
+property.database.collection("Listings").onSnapshot(function(querySnapshot) {
 
     querySnapshot.docChanges().forEach(function(change) {
 
       if (change.type === "added") {
-        addNewListingDiv(change);
+        property.addNewListingDiv(change);
       }
       else if (change.type === "removed") {
-        removeListingDiv(change);
+        property.removeListingDiv(change);
       }
 
     });
 
 });
 
-function addNewListingDiv(change) {
-  propertyContainer.innerHTML += "<div class='" + change.doc.id + " listing'><div class='innertext'><div class='bold'>" + change.doc.data().title + "</div><br>Price per night: £" + change.doc.data().price + "<br>Contact number: " + change.doc.data().phone_number + "<br><div class='oblique'>" + change.doc.data().description + "</div><br><button onClick='bookProperty(this.id)' id='" + change.doc.id + "'>Book</button></div><div class='innerimage'><img class='image' src='" + change.doc.data().image + "'></div></div>"
-}
 
-function removeListingDiv(change) {
+Property.prototype.addNewListingDiv = function (change) {
+  propertyContainer.innerHTML += "<div class='" + change.doc.id + " listing'><div class='innertext'><div class='bold'>" + change.doc.data().title + "</div><br>Price per night: £" + change.doc.data().price + "<br>Contact number: " + change.doc.data().phone_number + "<br><div class='oblique'>" + change.doc.data().description + "</div><br><button onClick='property.bookProperty(this.id)' id='" + change.doc.id + "'>Book</button></div><div class='innerimage'><img class='image' src='" + change.doc.data().image + "'></div></div>"
+};
+
+Property.prototype.removeListingDiv = function (change) {
   titleBeingBooked = change.doc.data().title;
-  var itemToRemove = document.getElementsByClassName(change.doc.id)[0];
+  itemToRemove = document.getElementsByClassName(change.doc.id)[0];
   propertyContainer.removeChild(itemToRemove);
-}
+};
 
-function addProperty() {
+Property.prototype.updateListingVariables = function () {
+  propertyTitle = document.getElementById("propertyTitle").value;
+  propertyPrice = document.getElementById("propertyPricePerNight").value;
+  propertyPhoneNumber = document.getElementById("propertyPhoneNumber").value;
+  propertyDescription = document.getElementById("propertyDescription").value;
+  propertyImage = document.getElementById("propertyImage").value;
+};
 
-  var titleText = document.getElementById("propertyTitle").value;
-  var pricePerNight = document.getElementById("propertyPricePerNight").value;
-  var phoneNumber = document.getElementById("propertyPhoneNumber").value;
-  var description = document.getElementById("propertyDescription").value;
-  var image = document.getElementById("propertyImage").value;
+Property.prototype.addProperty = function (title = propertyTitle, price = propertyPrice, phoneNumber = propertyPhoneNumber, description = propertyDescription, image = propertyImage) {
 
-  db.collection("Listings").doc().set({
-      title: titleText,
-      price: pricePerNight,
+  this.database.collection("Listings").doc().set({
+      title: title,
+      price: price,
       phone_number: phoneNumber,
-      image: image,
-      description: description
+      description: propertyDescription,
+      image: propertyImage
   })
   .then(function() {
       console.log("Listing successfully added!");
@@ -56,11 +66,11 @@ function addProperty() {
       console.error("Error adding listing: ", error);
   });
 
-}
+};
 
-function bookProperty(button_id, deletedItemTitle) {
+Property.prototype.bookProperty = function (button_id) {
 
-  db.collection("Listings").doc(button_id).delete().then(function() {
+  this.database.collection("Listings").doc(button_id).delete().then(function() {
     window.alert("You successfully booked " + titleBeingBooked + "!")
     console.log("You successfully booked a listing!");
 
@@ -68,4 +78,8 @@ function bookProperty(button_id, deletedItemTitle) {
     console.error("Error removing document: ", error);
   });
 
-}
+};
+
+Property.prototype.sayHello = function () {
+  return "hello";
+};
