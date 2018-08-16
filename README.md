@@ -1,3 +1,5 @@
+This is Week 6 of Makers, and we are working on our first group project, lasting for 5 days.
+
 # Makers bnb
 
 Makers bnb allows users to list properties and book properties that are listed
@@ -55,6 +57,23 @@ I would like to list my property on makers bnb
 
 ## Goals and Progress
 
-Monday - Create sign up page and connect a database, adding text based listings to.
+### Monday
+Goal: Create sign up page and connect a database, adding text based listings to.  
+Achieved:  
 
-Achieved -
+### Tuesday
+Goal 1: Decide on what database and webdriver we will use.  
+Goal 2: Be able to collaborate on GitHub on one repo.  
+Goal 3: Create a database that is available on all devices.  
+Goal 4: Work on MVP  
+Stretch Goal: Have a completed MVP  
+
+Achieved: Goal 1-4.  
+
+### Wednesday
+Goal 1: Compile separate components of the code so we have a GitHub with a running MVP.  
+Goal 2: Add description, location, price per night, and image to listing profile.  
+Goal 3: Be able to book a listing and delete the listing from the database.  
+Sretch Goal: User management - sign up, sign in, sign up.  
+
+Achieved: Goal 1-3.  
