@@ -17,6 +17,8 @@ describe("add a listing", function(){
     cy.contains('Price per night: £30')
     cy.contains("This property is the bee's knees")
     cy.contains('0000')
-    cy.get("#propertyContainer").find("img");
+    cy.get("#propertyContainer")
+    .get('.image')
+    .should('have.attr', 'src').and('include', 'https://i.redd.it/o85436g929g11.jpg')
   });
 });
