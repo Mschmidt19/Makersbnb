@@ -22,29 +22,35 @@ function createUser(){
 }
 
 function signIn(){
+  this.username = document.getElementById("username").value;
+  this.password = document.getElementById("password").value;
+
   var usersRef = db.collection('Users');
   var allUsers = usersRef.get()
       .then(snapshot => {
         snapshot.forEach(doc => {
-          console.log(doc.data().username);
-          console.log(doc.data());
+          if (this.username === doc.data().username) {
+            if (this.password === doc.data().password){
+              console.log("Yay you have signed in");
+              // redirect page here
+            } else {
+              console.error("Password incorrect.");
+            }
+          } else {
+            console.error("username does not exist")
+          }
         });
-      })
-      .catch(err => {
-        console.log('Error getting documents', err);
       });
-
-
-  // // want to check with collection "Users" on firebase
-  // var username = document.getElementById("username").value;
-  // var password = document.getElementById("password").value;
-  //
-  // if (username === db.collection("Users").doc('dKJswfv3b3xj7SqWXLXB').username) {
-  //   console.log("Whee, username matches")};
-
-  // give error if username =/= password, redirect if username=password
-
+    // .catch(err => {
+    //   console.log('Error getting documents', err);
+    // });
 };
+      //     };
+      //     console.log(doc.data().username);
+      //     console.log(doc.data());
+      //   });
+      // })
+
 // function signOut(){
 //   // redirect
 // }(
