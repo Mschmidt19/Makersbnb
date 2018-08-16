@@ -12,18 +12,25 @@ db.collection("Listings").onSnapshot(function(querySnapshot) {
     querySnapshot.docChanges().forEach(function(change) {
 
       if (change.type === "added") {
-
-        propertyContainer.innerHTML += "<div class='" + change.doc.id + " listing'><div class='innertext'>" + change.doc.data().title + "<br>Contact number: " + change.doc.data().phone_number + "<br>" + change.doc.data().description + "<br><button onClick='bookProperty(this.id)' id='" + change.doc.id + "'>Book</button></div><div class='innerimage'><img class='image' src='" + change.doc.data().image + "'></div></div>"
-
+        addNewListingDiv(change);
       }
-      else if (change.type === "removed") { // doesn't work yet
-        var itemToRemove = document.getElementsByClassName(change.doc.id)[0];
-        propertyContainer.removeChild(itemToRemove);
+      else if (change.type === "removed") {
+        removeListingDiv(change);
       }
 
     });
 
 });
+
+function addNewListingDiv(change) {
+  propertyContainer.innerHTML += "<div class='" + change.doc.id + " listing'><div class='innertext'>" + change.doc.data().title + "<br>Contact number: " + change.doc.data().phone_number + "<br>" + change.doc.data().description + "<br><button onClick='bookProperty(this.id)' id='" + change.doc.id + "'>Book</button></div><div class='innerimage'><img class='image' src='" + change.doc.data().image + "'></div></div>"
+}
+
+function removeListingDiv(change) {
+  var itemToRemove = document.getElementsByClassName(change.doc.id)[0];
+  propertyContainer.removeChild(itemToRemove);
+  window.alert("You successfully booked " + change.doc.data().title + "!")
+}
 
 function addProperty() {
 
@@ -51,7 +58,6 @@ function bookProperty(button_id) {
 
   db.collection("Listings").doc(button_id).delete().then(function() {
     console.log("You successfully booked a listing!");
-    // location.reload();
 
   }).catch(function(error) {
     console.error("Error removing document: ", error);
