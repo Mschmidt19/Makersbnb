@@ -24,14 +24,14 @@ textarea {
 }
 
 label {
-  width: 10%;
+  width: 13%;
   margin-left: 10px;
   float: left;
 }
 
 .listing {
   background-color: white;
-  width: 80%;
+  width: 88%;
   border: 10px solid navy;
   padding: 25px;
   margin: 25px;
@@ -58,7 +58,7 @@ label {
   display: inline-block;
   vertical-align: top;
   height: auto;
-  width: 70%;
+  width: 75%;
 }
 
 .innerimage {
@@ -74,4 +74,13 @@ label {
   width: 13%;
   float: left;
   text-align: right;
+}
+
+.oblique {
+    font-style: oblique;
+}
+
+.bold {
+  font-size: 1.5em;
+  font-weight: bold;
 }
