@@ -16,21 +16,25 @@ function createUser(){
       email: email,
       password: password
   })
-}
 
   firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
     // Handle errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
+  }).then(function(userRecord) {
+    // This prints a message letting us know that user has been created, with a uid.
+    console.log("Successfully created new user")
   })
+  .catch(function(error){
+    console.log("Error creating new user:", error);
+  });
+}
 
-    .then(function(userRecord) {
-      // This prints a message letting us know that user has been created, with a uid.
-      console.log("Successfully created new user:", userRecord.uid)
-    })
-    .catch(function(error){
-      console.log("Error creating new user:", error);
-    });
+
+
+
+
+// firebase.auth().onAuthStateChanged(firebaseUser => { });
 
 //
 // // Create signIn function
