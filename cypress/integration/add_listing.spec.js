@@ -1,6 +1,6 @@
 describe("add a listing", function(){
   it('fills in fields', function(){
-    cy.visit('/index.html')
+    cy.visit('/index_test.html')
       .get('#propertyTitle')
       .type('Taco Man')
       .get('#propertyPhoneNumber')
