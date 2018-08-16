@@ -15,9 +15,6 @@ function createUser(){
       password: password
   })
 
-  this.username = username;
-
-  // redirect to logged-in homepage
 
 }
 
@@ -32,18 +29,19 @@ function signIn(){
           if (this.username === doc.data().username) {
             if (this.password === doc.data().password){
               console.log("Yay you have signed in");
-              // redirect page here
+              window.location = "index.html"
             } else {
               console.error("Password incorrect.");
             }
-          } else {
+          }
+          else {
             console.error("username does not exist")
           }
         });
-      });
-    // .catch(err => {
-    //   console.log('Error getting documents', err);
-    // });
+      })
+    .catch(err => {
+      console.log('Error getting documents', err);
+    });
 };
       //     };
       //     console.log(doc.data().username);
