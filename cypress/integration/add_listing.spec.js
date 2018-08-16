@@ -3,6 +3,8 @@ describe("add a listing", function(){
     cy.visit('/index.html')
       .get('#propertyTitle')
       .type('Taco Man')
+      .get('propertyPrice')
+      .type('30')
       .get('#propertyPhoneNumber')
       .type('0000')
       .get('#propertyImage')
@@ -12,6 +14,7 @@ describe("add a listing", function(){
     cy.get('#addPropertyButton')
       .click()
     cy.contains('Taco Man')
+    cy.contains('£30 per night')
     cy.contains("This property is the bee's knees")
     cy.contains('0000')
     cy.get("#propertyContainer").find("img");
