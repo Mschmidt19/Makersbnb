@@ -8,44 +8,44 @@ var db = firebase.firestore();
 function createUser(){
 
   var username = document.getElementById("username").value;
-  var email = document.getElementById("email").value;
   var password = document.getElementById("password").value;
 
   db.collection("Users").doc().set({
       username: username,
-      email: email,
       password: password
   })
 
-  firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-    // Handle errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-  }).then(function(userRecord) {
-    // This prints a message letting us know that user has been created, with a uid.
-    console.log("Successfully created new user")
-  })
-  .catch(function(error){
-    console.log("Error creating new user:", error);
-  });
+  this.username = username;
+
+  // redirect to logged-in homepage
+
 }
 
+function signIn(){
+  var usersRef = db.collection('Users');
+  var allUsers = usersRef.get()
+      .then(snapshot => {
+        snapshot.forEach(doc => {
+          console.log(doc.data().username);
+          console.log(doc.data());
+        });
+      })
+      .catch(err => {
+        console.log('Error getting documents', err);
+      });
 
 
+  // // want to check with collection "Users" on firebase
+  // var username = document.getElementById("username").value;
+  // var password = document.getElementById("password").value;
+  //
+  // if (username === db.collection("Users").doc('dKJswfv3b3xj7SqWXLXB').username) {
+  //   console.log("Whee, username matches")};
 
+  // give error if username =/= password, redirect if username=password
 
-// firebase.auth().onAuthStateChanged(firebaseUser => { });
-
-//
-// // Create signIn function
-// firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error){
-//   var errorCode = error.code;
-//   var errorMessage = error.message;
-// })
-//
-// // Create signOut function
-// firebase.auth().signOut().then(function(){
-//   // signOut successful.
-// }).catch(function(error){
-//   // An error happened.
-// });
+};
+// function signOut(){
+//   // redirect
+// }(
+// )
