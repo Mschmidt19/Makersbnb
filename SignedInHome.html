@@ -6,11 +6,7 @@
   </head>
   <body>
     <div class="header verticallycentered">
-      <input id="username" placeholder ="username">
-      <label for="password"></label>
-      <input id="password" placeholder ="password">
-      <button id="signInButton" onclick="signIn()">Sign In</button>
-      <button class="right" id="signUpButton" onclick="signUp()">Sign Up</button>
+      <button class="right" id="signOutButton" onclick="signOut()">Sign out</button>
     </div>
     <div class="centered_text">
       <h1>Makers BnB</h1>
@@ -33,21 +29,12 @@
       <label for="propertyDescription">Description:</label>
       <textarea id="propertyDescription"></textarea>
       <br>
-      <button id="addPropertyButton" onclick="addProperty()">Submit</button>
+      <button id="addPropertyButton" onclick="property.updateListingVariables(); property.addProperty()">Submit</button>
       <br>
       <h2>Listings:</h2>
     </div>
     <div id="propertyContainer">
-      <!-- <div class="listing">
-        <div class="innertext">
-          Marek's Place
-          <br>
-          Contact number: +(42) 06969696969
-        </div>
-        <div class="innerimage">
-          <img class="image" src='https://metrouk2.files.wordpress.com/2016/07/ad_212386187.jpg?quality=80&strip=all&strip=all'>
-        </div>
-      </div> -->
+      <!-- Container is populated by firebase -->
     <div>
 
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>

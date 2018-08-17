@@ -1,3 +1,5 @@
+var current_user;
+
 function createUser(){
 
   var username = document.getElementById("username").value;
@@ -33,6 +35,11 @@ function signUp() {
 }
 
 function redirectToNotSignedIn() {
+  window.location = "NotSignedInHome.html";
+}
+
+function signOut() {
+  // code will be added about forgetting current user info
   window.location = "NotSignedInHome.html";
 }
 

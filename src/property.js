@@ -1,10 +1,12 @@
 var property = new Property();
 
+
 function Property (database = firestore) {
   this.database = database
 }
 
 var propertyContainer = document.getElementById('propertyContainer');
+var propertyContainerNoButton = document.getElementById('propertyContainerNoButton');
 var propertyTitle;
 var propertyPrice;
 var propertyPhoneNumber;
@@ -17,25 +19,45 @@ property.database.collection("Listings").onSnapshot(function(querySnapshot) {
     querySnapshot.docChanges().forEach(function(change) {
 
       if (change.type === "added") {
-        property.addNewListingDiv(change);
+        if (window.location.href.slice(-20, -5) === "NotSignedInHome"){
+          property.addNewListingDivNoButton(change)
+        }
+        else if (window.location.href.slice(-17, -5) === "SignedInHome") {
+          property.addNewListingDiv(change);
+        }
+
       }
       else if (change.type === "removed") {
-        property.removeListingDiv(change);
+        if (window.location.href.slice(-20, -5) === "NotSignedInHome") {
+          property.removeListingDivNoButton(change);
+        }
+        else if (window.location.href.slice(-17, -5) === "SignedInHome") {
+          property.removeListingDiv(change);
+        }
       }
 
     });
 
 });
 
-
 Property.prototype.addNewListingDiv = function (change) {
   propertyContainer.innerHTML += "<div class='" + change.doc.id + " listing'><div class='innertext'><div class='bold'>" + change.doc.data().title + "</div><br>Price per night: £" + change.doc.data().price + "<br>Contact number: " + change.doc.data().phone_number + "<br><div class='oblique'>" + change.doc.data().description + "</div><br><button onClick='property.bookProperty(this.id)' id='" + change.doc.id + "'>Book</button></div><div class='innerimage'><img class='image' src='" + change.doc.data().image + "'></div></div>"
+};
+
+Property.prototype.addNewListingDivNoButton = function (change) {
+  propertyContainerNoButton.innerHTML += "<div class='" + change.doc.id + " listing'><div class='innertext'><div class='bold'>" + change.doc.data().title + "</div><br>Price per night: £" + change.doc.data().price + "<br>Contact number: " + change.doc.data().phone_number + "<br><div class='oblique'>" + change.doc.data().description + "</div></div><div class='innerimage'><img class='image' src='" + change.doc.data().image + "'></div></div>"
 };
 
 Property.prototype.removeListingDiv = function (change) {
   titleBeingBooked = change.doc.data().title;
   itemToRemove = document.getElementsByClassName(change.doc.id)[0];
   propertyContainer.removeChild(itemToRemove);
+};
+
+Property.prototype.removeListingDivNoButton = function (change) {
+  titleBeingBooked = change.doc.data().title;
+  itemToRemove = document.getElementsByClassName(change.doc.id)[0];
+  propertyContainerNoButton.removeChild(itemToRemove);
 };
 
 Property.prototype.updateListingVariables = function () {

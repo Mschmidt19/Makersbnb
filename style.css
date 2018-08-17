@@ -88,7 +88,12 @@ label {
   float: left;
   text-align: right;
 }
-
+.alert {
+  position: fixed;
+  height: 200px;
+  width: 400px;
+  background-color: #ffd97f;
+}
 .right {
   float: right;
   margin-right: 10px;
