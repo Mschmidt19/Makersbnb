@@ -28,9 +28,75 @@ Once logged in a user can...
 
 ## User Stories
 
-As a property owner
-So that I can allow others to book my property
-I would like to list my property on makers bnb
+MINIMUM VIABLE PRODUCT
+```
+[MVP] As a MakersBnB product manager,  
+So that our website gets visibility,  
+I want any user of the web to be able to see all listings (without needing to sign up).
+
+[MVP] As a user listing a property,  
+So that I can advertise my property,  
+I want to post a listing via a web form.
+
+[MVP] As a user listing a property,  
+So that I can maximize my opportunities,  
+I want to be able to post more than one listing.
+```
+
+STRETCH (These would be nice to have)
+```
+
+[Stretch] As a user listing a property,  
+So that I can advertise my property,  
+I want to give details and a photo of my property via a web form.
+
+[Stretch] As a user renting a property,  
+So that I can make an informed decision on my booking,  
+I need to be able to look at details of an available listing.
+
+[Stretch] As a user renting a property,  
+So that I can book a listing,  
+I expect to be able to book a listing.
+
+[Stretch] As a MakersBnB product manager,  
+So that multiple users can use the service,  
+I want users to be able to sign up, sign in, and sign out.
+
+[Stretch] As a MakersBnB product manager,  
+So that I am better able to regulate the activity on our website,  
+I need the user to sign in before they are able to book or post a listing.
+
+[Stretch] As a user renting a property,  
+So that I can inform other users of my experience,  
+I would like to post a comment on a listing.
+
+[Stretch] As a user renting a property,  
+So that I can make an informed decision on my booking,  
+I would like to read comments that other users have posted.
+
+[Stretch] As a user listing a property,  
+So I can review what I have posted,  
+I need to be able to view my own listings.
+```
+
+ADVANCED (It is unlikely that we will get to working on these, but if we do have time, we will)
+```
+[Adv] As a user listing a property,  
+So that I can check my schedule before accepting a new commitment,  
+I want to see any new bookings on my listings and be able to confirm or decline.
+
+[Adv] As a user renting a property,  
+So that I am reassured that the poster of the listing has seen my booking,  
+I expect to see confirmation or declination my booking.
+
+[Adv] As a user listing a property,  
+So that we avoid booking conflicts,  
+I expect to be able to select available dates that my listing is available.
+
+[Adv] As a user renting a property,  
+So that I can compare the listings to my affordability and available dates,  
+I want to filter for all listings available in my specified date range, along with their price per night.
+```
 
 ## Charter
 
