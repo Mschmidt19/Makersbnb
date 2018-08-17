@@ -1,7 +1,3 @@
-const firestore = firebase.firestore();
-const settings = {/*your settings...*/ timestampsInSnapshots: true};
-firestore.settings(settings);
-
 var property = new Property();
 
 function Property (database = firestore) {

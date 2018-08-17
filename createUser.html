@@ -6,6 +6,9 @@
 <label for="password">Create password: </label>
 <input id="password">
 <button id="createUserButton" onclick="createUser()">Submit</button>
+<br>
+<br>
+<button id="backToSignIn" onclick="redirectToNotSignedIn()">Back To Homepage</button>
 
 <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js"></script>
@@ -21,5 +24,6 @@
   };
   firebase.initializeApp(config);
 </script>
-<script src="src/user.js"></script>
+  <script src="src/firebasefunction.js"></script>
+  <script src="src/user.js"></script>
 </html>
