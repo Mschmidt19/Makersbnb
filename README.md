@@ -58,10 +58,12 @@ I would like to list my property on makers bnb
 ## Goals and Progress
 
 ### Monday
+Team Members Present: Marcus, Marek, Ed
 Goal: Create sign up page and connect a database, adding text based listings to.  
 Achieved:  
 
 ### Tuesday
+Team Members Present: Marcus, Marek, Ed, Cui Li, Olive
 Goal 1: Decide on what database and webdriver we will use.  
 Goal 2: Be able to collaborate on GitHub on one repo.  
 Goal 3: Create a database that is available on all devices.  
@@ -71,20 +73,31 @@ Stretch Goal: Have a completed MVP
 Achieved: Goal 1-4.  
 
 ### Wednesday
+Team Members Present: Marcus, Marek, Ed, Cui Li, Olive
 Goal 1: Compile separate components of the code so we have a GitHub with a running MVP.  
 Goal 2: Add description, location, price per night, and image to listing profile.  
 Goal 3: Be able to book a listing and delete the listing from the database.  
-Sretch Goal: User management - sign up, sign in, sign up.  
+Stretch Goal: User management - sign up, sign in, sign up.  
 
 Achieved: Goal 1-3.  
 
 ### Thursday
+Team Members Present: Marcus, Marek, Ed, Cui Li
 Goal 1: Add a price per night field in out listing descriptions.  
 Goal 2: Improve on formatting of our HTML page.  
 Goal 3: Finish the booking feature by implementing 3-way-binding, so that upon deletion of an entry from the databse, the HTML page will update the viewed listings.  
 Goal 4: Implement sign up, sign in, and sign out.  
 Goal 5: Research on how to unit test out code by mocking Firebase.  
-Sretch Goal 1: Be able to unit test that our code delegates to Firebase.  
-Sretch Goal 2: Create 3 separate HTML pages - homepage before login, sign up page, and homepage after login.  
+Stretch Goal 1: Be able to unit test that our code delegates to Firebase.  
+Stretch Goal 2: Create 3 separate HTML pages - homepage before login, sign up page, and homepage after login.  
 
-Achieved: Goal 1-3,5 and have created the logic and functions for Goal 4's sign up and sign in.  
+Achieved: Goal 1-3, 5 and have created the logic and functions for Goal 4's sign up and sign in.  
+
+### Friday
+Team Members Present: Marcus, Marek, Ed, Cui Li
+Goal 1: Complete sign up, sign in, and sign out, and implement into MakersBnB.  
+Goal 2: Create 3 separate HTML pages (yesterday's stretch goal)
+Goal 3: Write Cypress tests for Goal 1.  
+Goal 4: Allow click through to separate property pages for each listing, and book the page on that page.  
+Stretch Goal: Add new feature to allow users to comment on a listing, and the listing shows up in individual property pages.  
+
