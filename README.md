@@ -1,8 +1,8 @@
-This is Week 6 of Makers, and we are working on our first group project, lasting for 5 days.
+This is Week 6 of Makers, and we are working on our first group project, lasting 5 days.
 
-# Makers bnb
+# MakersBnB
 
-Makers bnb allows users to list properties and book properties that are listed
+MakersBnB allows users to list properties and book properties that are listed.
 
 ## MVP
 
