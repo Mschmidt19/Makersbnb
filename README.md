@@ -168,3 +168,4 @@ Goal 3: Write Cypress tests for Goal 1.
 Goal 4: Allow click through to separate property pages for each listing, and book the page on that page.  
 Stretch Goal: Add new feature to allow users to comment on a listing, and the listing shows up in individual property pages.  
 
+Achieved: Goal 1-2.
