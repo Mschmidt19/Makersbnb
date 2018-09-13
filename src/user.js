@@ -57,11 +57,11 @@ function signIn(){
               console.log("Yay you have signed in");
               window.location = "SignedInHome.html"
             } else {
-              console.error("Password incorrect.");
+              window.alert("Password incorrect.");
             }
           }
           else {
-            console.error("Username does not exist.")
+            console.log("Username does not exist.")
           }
         });
       })
